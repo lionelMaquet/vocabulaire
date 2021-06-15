@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace ExamenProgrammation
 {
+    // Cette classe statique contient des fonctions utiles au fonctionnement du logiciel
     static public class Helper
     {
-        static public Playlist MakePlaylist(Serie serie, bool versFr)
+        // Crée une playlist sur base d'une série
+        static public Playlist MakePlaylist(Serie serie, bool versFr) // versFR = de la langue étrangère vers le français ou du français vers la langue étrange
         {
             Playlist newPlaylist = new Playlist();
             List<Mot> motsPlaylist = DBConnector.getWords(serie);
@@ -25,6 +27,7 @@ namespace ExamenProgrammation
             return newPlaylist;
         }
 
+        // Réinitialise une playlist
         static public Playlist ResetPlaylist(Playlist playlist)
         {
             playlist.nombreRates = 0;
@@ -40,6 +43,7 @@ namespace ExamenProgrammation
             return playlist;
         }
 
+        // Crée une nouvelle playlist sur base des mots auxquels l'utilisateur a mal répondu d'une autre playlist
         static public Playlist MakePlaylistFromWrongResults(Playlist playlist)
         {
             Playlist newPlaylist = new Playlist();

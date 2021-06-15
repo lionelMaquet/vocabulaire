@@ -7,6 +7,7 @@ using System.Windows.Forms;
 
 namespace ExamenProgrammation
 {
+    // Ce bouton sert à contenir l'information concernant la langue sélectionnée
     public class LanguageButton : Button
     {
         public Langue langue;

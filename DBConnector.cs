@@ -7,14 +7,13 @@ using System.Threading.Tasks;
 
 namespace ExamenProgrammation
 {
+    // Cette classe statique contient les fonctions communiquant avec la BDD
     public static class DBConnector
     {
         static string connectionString = "server=localhost;userid=root;password=;database=vocabulaire";
         static MySqlConnection mysqlConnection;
-        
-        
-        
 
+        // Récupère toutes les différentes langues de la BDD
         public static List<Langue> getLanguages()
         {
             mysqlConnection = new MySqlConnection(connectionString);
@@ -34,6 +33,7 @@ namespace ExamenProgrammation
             return langues;
         }
 
+        // Récupère toutes les séries d'une langue 
         public static List<Serie> getSeries(Langue langue)
         {
             mysqlConnection = new MySqlConnection(connectionString);
@@ -54,6 +54,7 @@ namespace ExamenProgrammation
             return series;
         }
 
+        // Récupère tous les mots d'une série
         public static List<Mot> getWords(Serie serie)
         {
             mysqlConnection = new MySqlConnection(connectionString);
@@ -80,6 +81,7 @@ namespace ExamenProgrammation
             return mots;
         }
 
+        // Ajoute un mot à la BDD
         public static void addWord(Serie serie, string fr, string traduction)
         {
             mysqlConnection = new MySqlConnection(connectionString);
@@ -92,45 +94,37 @@ namespace ExamenProgrammation
             cmd_addWord.Parameters.AddWithValue("@nombre_reussi", 0 );
             cmd_addWord.Parameters.AddWithValue("@nombre_rate", 0 );
             cmd_addWord.ExecuteNonQuery();
-
-
             mysqlConnection.Close();
         }
 
+        // Ajoute une série à la BDD
         public static void addSerie(Langue langue, string nom)
         {
             mysqlConnection = new MySqlConnection(connectionString);
             mysqlConnection.Open();
             MySqlCommand cmd_addSerie = mysqlConnection.CreateCommand();
-
             cmd_addSerie.CommandText = "INSERT INTO series(nom_serie, langue_traduction) VALUES (@nom_serie, @langue_traduction)";
             cmd_addSerie.Parameters.AddWithValue("@nom_serie", nom);
             cmd_addSerie.Parameters.AddWithValue("@langue_traduction", langue.nom_short);
-
             cmd_addSerie.ExecuteNonQuery();
-
-
             mysqlConnection.Close();
         }
 
+        // Ajoute une langue à la BDD
         public static void addLangue(string langue_court, string langue_long)
         {
             mysqlConnection = new MySqlConnection(connectionString);
             mysqlConnection.Open();
             MySqlCommand cmd_addLangue = mysqlConnection.CreateCommand();
-
             cmd_addLangue.CommandText = "INSERT INTO langues(langue_short, langue_long) VALUES (@langue_court, @langue_long)";
             cmd_addLangue.Parameters.AddWithValue("@langue_court", langue_court);
             cmd_addLangue.Parameters.AddWithValue("@langue_long", langue_long);
-
             cmd_addLangue.ExecuteNonQuery();
-
-
             mysqlConnection.Close();
         }
 
 
-
+        // Met à jour les statistiques de tous les mots d'une playlist
         public static void updateWords(Playlist playlist)
         {
             mysqlConnection = new MySqlConnection(connectionString);
@@ -145,13 +139,11 @@ namespace ExamenProgrammation
                 cmd.Parameters.AddWithValue("@num_mot", r.mot.num_mot);
                 cmd.Parameters.AddWithValue("@nombre_reussi", r.mot.nombre_reussi);
                 cmd.Parameters.AddWithValue("@nombre_rate", r.mot.nombre_rate);
-
                 cmd.Connection = mysqlConnection;
                 cmd.ExecuteNonQuery();
             }
 
             mysqlConnection.Close();
-
         }
     }
 }

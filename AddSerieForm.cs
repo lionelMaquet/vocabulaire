@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace ExamenProgrammation
 {
+    // Ce formulaire est présenté à l'utilisateur pour introduire une nouvelle série dans une langue
     public partial class AddSerieForm : Form
     {
         Langue langue;
@@ -21,6 +22,7 @@ namespace ExamenProgrammation
 
         private void ButtonValidate_Click(object sender, EventArgs e)
         {
+            // Insertion de la série dans la BDD via le DBConnector
             string nomSerie = TextboxSerieName.Text;
             DBConnector.addSerie(langue, nomSerie);
             this.Close();

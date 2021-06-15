@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace ExamenProgrammation
 {
+    // Ce formulaire est présenté lorsque l'utilisateur souhaite ajouter un mot à une série
     public partial class AddWordForm : Form
     {
         Serie serie;
@@ -21,6 +22,7 @@ namespace ExamenProgrammation
 
         private void button_valider_Click(object sender, EventArgs e)
         {
+            // Insertion du mot dans la BDD via DBConnector
             string mot_fr = textbox_motFR.Text;
             string mot_traduction = textbox_traduction.Text;
             DBConnector.addWord(serie, mot_fr, mot_traduction);

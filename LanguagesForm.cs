@@ -11,7 +11,7 @@ using MySql.Data.MySqlClient;
 
 namespace ExamenProgrammation
 {
-
+    // Ce formulaire présente à l'utilisateur toutes les langues disponibles
     public partial class LanguagesForm : Form
     {
         public LanguagesForm()
