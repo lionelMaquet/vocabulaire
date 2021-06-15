@@ -26,6 +26,13 @@ namespace ExamenProgrammation
 
         private void InitPlaylist(object sender, EventArgs e)
         {
+            // Dans le cas où aucun mot n'est dans la liste
+            if (playlist.resultats.Count == 0)
+            {
+                this.Close();
+                this.parentSeriesForm.Show();
+                return;
+            }
             if (playlist.versFr)
             {
                 LabelMotATraduire.Text = playlist.resultats[playlist.currentMotIndex].mot.traduction;

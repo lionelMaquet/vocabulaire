@@ -40,7 +40,7 @@ namespace ExamenProgrammation
                 addSerieButton.langue = languages[i];
                 this.Controls.Add(addSerieButton);
                 addSerieButton.Text = "Ajouter une série";
-                addSerieButton.Location = new Point(150, 40 * i);
+                addSerieButton.Location = new Point(200, 40 * i);
                 addSerieButton.Size = new Size(100, 30);
                 addSerieButton.Click += this.addSerieButtonClick;
             }

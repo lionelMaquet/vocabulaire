@@ -34,9 +34,9 @@ namespace ExamenProgrammation
             // 
             // ButtonAddLanguage
             // 
-            this.ButtonAddLanguage.Location = new System.Drawing.Point(263, 36);
+            this.ButtonAddLanguage.Location = new System.Drawing.Point(276, 352);
             this.ButtonAddLanguage.Name = "ButtonAddLanguage";
-            this.ButtonAddLanguage.Size = new System.Drawing.Size(230, 33);
+            this.ButtonAddLanguage.Size = new System.Drawing.Size(230, 51);
             this.ButtonAddLanguage.TabIndex = 0;
             this.ButtonAddLanguage.Text = "Ajouter une langue";
             this.ButtonAddLanguage.UseVisualStyleBackColor = true;
