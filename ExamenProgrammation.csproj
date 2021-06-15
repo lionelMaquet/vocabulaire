@@ -47,12 +47,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddLanguageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddLanguageForm.Designer.cs">
+      <DependentUpon>AddLanguageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddSerieButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AddSerieForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSerieForm.Designer.cs">
+      <DependentUpon>AddSerieForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddWordForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddWordForm.Designer.cs">
       <DependentUpon>AddWordForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper.cs" />
     <Compile Include="LanguageButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -71,8 +87,28 @@
       <DependentUpon>ListWordsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Mot.cs" />
+    <Compile Include="Playlist.cs" />
+    <Compile Include="PlaylistEndForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlaylistEndForm.Designer.cs">
+      <DependentUpon>PlaylistEndForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="playSerieForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="playSerieForm.Designer.cs">
+      <DependentUpon>playSerieForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resultat.cs" />
+    <Compile Include="ResultDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultDetailsForm.Designer.cs">
+      <DependentUpon>ResultDetailsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Serie.cs" />
     <Compile Include="SerieButton.cs">
       <SubType>Component</SubType>
@@ -83,11 +119,23 @@
     <Compile Include="SeriesForm.Designer.cs">
       <DependentUpon>SeriesForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddLanguageForm.resx">
+      <DependentUpon>AddLanguageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddSerieForm.resx">
+      <DependentUpon>AddSerieForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddWordForm.resx">
       <DependentUpon>AddWordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LanguagesForm.resx">
       <DependentUpon>LanguagesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlaylistEndForm.resx">
+      <DependentUpon>PlaylistEndForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="playSerieForm.resx">
+      <DependentUpon>playSerieForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -98,6 +146,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ResultDetailsForm.resx">
+      <DependentUpon>ResultDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeriesForm.resx">
+      <DependentUpon>SeriesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

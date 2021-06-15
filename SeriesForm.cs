@@ -13,9 +13,11 @@ namespace ExamenProgrammation
     public partial class SeriesForm : Form
     {
         Langue langue;
-        public SeriesForm(Langue langue)
+        LanguagesForm parentLanguagesForm;
+        public SeriesForm(Langue langue, LanguagesForm parentLanguagesForm)
         {
             this.langue = langue;
+            this.parentLanguagesForm = parentLanguagesForm;
             InitializeComponent();
             this.Shown += createSeriesButtons;
         }
@@ -56,19 +58,37 @@ namespace ExamenProgrammation
                 addWordButton.Location = new Point(marginLeft * 3 + buttonWidth * 2, 40 * i);
 
                 // Button for playing the serie 
-                SerieButton playSerieButton = new SerieButton();
-                this.Controls.Add(playSerieButton);
-                playSerieButton.Text = "Jouer série";
-                playSerieButton.Size = size;
-                playSerieButton.Click += this.playSerieButton;
-                playSerieButton.serie = series[i];
-                playSerieButton.Location = new Point(marginLeft * 4 + buttonWidth * 3, 40 * i);
+                SerieButton playSerieButtonVersTrad = new SerieButton();
+                this.Controls.Add(playSerieButtonVersTrad);
+                playSerieButtonVersTrad.Text = "Vers trad";
+                playSerieButtonVersTrad.versFr = false;
+                playSerieButtonVersTrad.Size = size;
+                playSerieButtonVersTrad.Click += this.playSerieButton;
+                playSerieButtonVersTrad.serie = series[i];
+                playSerieButtonVersTrad.Location = new Point(marginLeft * 4 + buttonWidth * 3, 40 * i);
+
+                // Button for playing the serie 
+                SerieButton playSerieButtonVersFr = new SerieButton();
+                this.Controls.Add(playSerieButtonVersFr);
+                playSerieButtonVersFr.Text = "Vers fr";
+                playSerieButtonVersFr.versFr = true;
+                playSerieButtonVersFr.Size = size;
+                playSerieButtonVersFr.Click += this.playSerieButton;
+                playSerieButtonVersFr.serie = series[i];
+                playSerieButtonVersFr.Location = new Point(marginLeft * 5 + buttonWidth * 4, 40 * i);
             }
         }
 
         private void playSerieButton(object sender, EventArgs e)
         {
             Serie serie = (sender as SerieButton).serie;
+            bool versFr = (sender as SerieButton).versFr;
+            Playlist playlist = Helper.MakePlaylist(serie, versFr);
+            playSerieForm playForm = new playSerieForm(playlist, this);
+            playForm.Show();
+            this.Hide();
+
+
             // What's a good way to create a playlist ? 
             // 1 : Pass the serie to the form 
             // 2 : The form transforms it to a playlist, full of a list of results ? 
@@ -102,6 +122,11 @@ namespace ExamenProgrammation
             MessageBox.Show($"{(sender as SerieButton).serie.num_serie} {(sender as SerieButton).serie.nom_serie} {(sender as SerieButton).serie.langue_traduction} ");
         }
 
+        private void ButtonBack_Click(object sender, EventArgs e)
+        {
 
+            this.parentLanguagesForm.Show();
+            this.Close();
+        }
     }
 }

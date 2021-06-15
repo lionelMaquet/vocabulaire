@@ -7,9 +7,8 @@ using System.Windows.Forms;
 
 namespace ExamenProgrammation
 {
-    public class SerieButton : Button
+    public class AddSerieButton : Button
     {
-        public Serie serie;
-        public bool versFr;
+        public Langue langue;
     }
 }

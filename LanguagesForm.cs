@@ -14,7 +14,6 @@ namespace ExamenProgrammation
 
     public partial class LanguagesForm : Form
     {
-        
         public LanguagesForm()
         {
             InitializeComponent();
@@ -35,14 +34,36 @@ namespace ExamenProgrammation
                 newButton.Size = new Size(100, 30);
                 newButton.Click += this.language_button_click;
                 newButton.langue = languages[i];
+
+
+                AddSerieButton addSerieButton = new AddSerieButton();
+                addSerieButton.langue = languages[i];
+                this.Controls.Add(addSerieButton);
+                addSerieButton.Text = "Ajouter une série";
+                addSerieButton.Location = new Point(150, 40 * i);
+                addSerieButton.Size = new Size(100, 30);
+                addSerieButton.Click += this.addSerieButtonClick;
             }
+        }
+
+        private void addSerieButtonClick(object sender, EventArgs e)
+        {
+            AddSerieForm addSerieForm = new AddSerieForm((sender as AddSerieButton).langue);
+            addSerieForm.Show();
         }
 
         public void language_button_click(object sender, EventArgs e)
         {
-            SeriesForm seriesForm = new SeriesForm((sender as LanguageButton).langue);
+            SeriesForm seriesForm = new SeriesForm((sender as LanguageButton).langue, this);
             this.Hide();
             seriesForm.Show();
+        }
+
+        private void ButtonAddLanguage_Click(object sender, EventArgs e)
+        {
+            AddLanguageForm newAddLanguageForm = new AddLanguageForm();
+            newAddLanguageForm.Show();
+            this.Hide();
         }
     }
 }

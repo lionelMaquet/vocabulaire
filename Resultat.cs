@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ExamenProgrammation
 {
-    public class SerieButton : Button
+    public class Resultat
     {
-        public Serie serie;
-        public bool versFr;
+        public Mot mot;
+        public bool answeredRight = false;
+        public string reponse;
     }
 }

@@ -29,20 +29,34 @@ namespace ExamenProgrammation
         /// </summary>
         private void InitializeComponent()
         {
+            this.ButtonAddLanguage = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // Form1
+            // ButtonAddLanguage
+            // 
+            this.ButtonAddLanguage.Location = new System.Drawing.Point(263, 36);
+            this.ButtonAddLanguage.Name = "ButtonAddLanguage";
+            this.ButtonAddLanguage.Size = new System.Drawing.Size(230, 33);
+            this.ButtonAddLanguage.TabIndex = 0;
+            this.ButtonAddLanguage.Text = "Ajouter une langue";
+            this.ButtonAddLanguage.UseVisualStyleBackColor = true;
+            this.ButtonAddLanguage.Click += new System.EventHandler(this.ButtonAddLanguage_Click);
+            // 
+            // LanguagesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Form1";
+            this.Controls.Add(this.ButtonAddLanguage);
+            this.Name = "LanguagesForm";
             this.Text = "Form1";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button ButtonAddLanguage;
     }
 }
 

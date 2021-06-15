@@ -96,5 +96,62 @@ namespace ExamenProgrammation
 
             mysqlConnection.Close();
         }
+
+        public static void addSerie(Langue langue, string nom)
+        {
+            mysqlConnection = new MySqlConnection(connectionString);
+            mysqlConnection.Open();
+            MySqlCommand cmd_addSerie = mysqlConnection.CreateCommand();
+
+            cmd_addSerie.CommandText = "INSERT INTO series(nom_serie, langue_traduction) VALUES (@nom_serie, @langue_traduction)";
+            cmd_addSerie.Parameters.AddWithValue("@nom_serie", nom);
+            cmd_addSerie.Parameters.AddWithValue("@langue_traduction", langue.nom_short);
+
+            cmd_addSerie.ExecuteNonQuery();
+
+
+            mysqlConnection.Close();
+        }
+
+        public static void addLangue(string langue_court, string langue_long)
+        {
+            mysqlConnection = new MySqlConnection(connectionString);
+            mysqlConnection.Open();
+            MySqlCommand cmd_addLangue = mysqlConnection.CreateCommand();
+
+            cmd_addLangue.CommandText = "INSERT INTO langues(langue_short, langue_long) VALUES (@langue_court, @langue_long)";
+            cmd_addLangue.Parameters.AddWithValue("@langue_court", langue_court);
+            cmd_addLangue.Parameters.AddWithValue("@langue_long", langue_long);
+
+            cmd_addLangue.ExecuteNonQuery();
+
+
+            mysqlConnection.Close();
+        }
+
+
+
+        public static void updateWords(Playlist playlist)
+        {
+            mysqlConnection = new MySqlConnection(connectionString);
+            mysqlConnection.Open();
+
+            foreach(Resultat r in playlist.resultats)
+            {
+                string query = "UPDATE mots SET nombre_reussi=@nombre_reussi,nombre_rate=@nombre_rate WHERE num_mot =@num_mot";
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.CommandText = query;
+                cmd.Parameters.AddWithValue("@num_mot", r.mot.num_mot);
+                cmd.Parameters.AddWithValue("@nombre_reussi", r.mot.nombre_reussi);
+                cmd.Parameters.AddWithValue("@nombre_rate", r.mot.nombre_rate);
+
+                cmd.Connection = mysqlConnection;
+                cmd.ExecuteNonQuery();
+            }
+
+            mysqlConnection.Close();
+
+        }
     }
 }

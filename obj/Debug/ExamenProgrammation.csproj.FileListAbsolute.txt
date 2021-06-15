@@ -23,3 +23,9 @@ C:\Users\lione\source\repos\ExamenProgrammation\obj\Debug\ExamenProgrammation.ex
 C:\Users\lione\source\repos\ExamenProgrammation\obj\Debug\ExamenProgrammation.pdb
 C:\Users\lione\source\repos\ExamenProgrammation\obj\Debug\ExamenProgrammation.LanguagesForm.resources
 C:\Users\lione\source\repos\ExamenProgrammation\obj\Debug\ExamenProgrammation.AddWordForm.resources
+C:\Users\lione\source\repos\ExamenProgrammation\obj\Debug\ExamenProgrammation.playSerieForm.resources
+C:\Users\lione\source\repos\ExamenProgrammation\obj\Debug\ExamenProgrammation.PlaylistEndForm.resources
+C:\Users\lione\source\repos\ExamenProgrammation\obj\Debug\ExamenProgrammation.SeriesForm.resources
+C:\Users\lione\source\repos\ExamenProgrammation\obj\Debug\ExamenProgrammation.ResultDetailsForm.resources
+C:\Users\lione\source\repos\ExamenProgrammation\obj\Debug\ExamenProgrammation.AddSerieForm.resources
+C:\Users\lione\source\repos\ExamenProgrammation\obj\Debug\ExamenProgrammation.AddLanguageForm.resources
