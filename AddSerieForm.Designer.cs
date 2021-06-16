@@ -37,7 +37,7 @@ namespace ExamenProgrammation
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(196, 148);
+            this.label1.Location = new System.Drawing.Point(79, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(143, 24);
             this.label1.TabIndex = 0;
@@ -45,16 +45,16 @@ namespace ExamenProgrammation
             // 
             // TextboxSerieName
             // 
-            this.TextboxSerieName.Location = new System.Drawing.Point(356, 148);
+            this.TextboxSerieName.Location = new System.Drawing.Point(243, 57);
             this.TextboxSerieName.Name = "TextboxSerieName";
-            this.TextboxSerieName.Size = new System.Drawing.Size(100, 29);
+            this.TextboxSerieName.Size = new System.Drawing.Size(380, 29);
             this.TextboxSerieName.TabIndex = 1;
             // 
             // ButtonValidate
             // 
-            this.ButtonValidate.Location = new System.Drawing.Point(305, 224);
+            this.ButtonValidate.Location = new System.Drawing.Point(83, 120);
             this.ButtonValidate.Name = "ButtonValidate";
-            this.ButtonValidate.Size = new System.Drawing.Size(126, 43);
+            this.ButtonValidate.Size = new System.Drawing.Size(540, 43);
             this.ButtonValidate.TabIndex = 2;
             this.ButtonValidate.Text = "Valider";
             this.ButtonValidate.UseVisualStyleBackColor = true;
@@ -64,7 +64,7 @@ namespace ExamenProgrammation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(693, 216);
             this.Controls.Add(this.ButtonValidate);
             this.Controls.Add(this.TextboxSerieName);
             this.Controls.Add(this.label1);

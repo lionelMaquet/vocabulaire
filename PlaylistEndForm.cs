@@ -20,6 +20,7 @@ namespace ExamenProgrammation
             this.parentSeriesForm = parentSeriesForm;
             InitializeComponent();
             this.Shown += initDisplay;
+            this.CenterToScreen();
         }
 
         private void initDisplay(object sender, EventArgs e)
@@ -29,6 +30,12 @@ namespace ExamenProgrammation
             ButtonReplayWrongResults.Text = "Rejouer les mauvaises réponses";
             ButtonReplay.Text = "Rejouer la série actuelle";
             ButtonShowDetails.Text = "Details";
+
+            ResultLabel.Left = this.Width / 2 - ResultLabel.Width / 2;
+
+            ButtonBack.Size = Display.smallButtonSize;
+            
+            
         }
 
         private void ButtonShowDetails_Click(object sender, EventArgs e)

@@ -40,7 +40,7 @@ namespace ExamenProgrammation
             // ResultLabel
             // 
             this.ResultLabel.AutoSize = true;
-            this.ResultLabel.Location = new System.Drawing.Point(358, 75);
+            this.ResultLabel.Location = new System.Drawing.Point(366, 30);
             this.ResultLabel.Name = "ResultLabel";
             this.ResultLabel.Size = new System.Drawing.Size(60, 24);
             this.ResultLabel.TabIndex = 0;
@@ -48,9 +48,9 @@ namespace ExamenProgrammation
             // 
             // ButtonShowDetails
             // 
-            this.ButtonShowDetails.Location = new System.Drawing.Point(191, 202);
+            this.ButtonShowDetails.Location = new System.Drawing.Point(191, 95);
             this.ButtonShowDetails.Name = "ButtonShowDetails";
-            this.ButtonShowDetails.Size = new System.Drawing.Size(417, 33);
+            this.ButtonShowDetails.Size = new System.Drawing.Size(417, 53);
             this.ButtonShowDetails.TabIndex = 1;
             this.ButtonShowDetails.Text = "button1";
             this.ButtonShowDetails.UseVisualStyleBackColor = true;
@@ -58,9 +58,9 @@ namespace ExamenProgrammation
             // 
             // ButtonReplay
             // 
-            this.ButtonReplay.Location = new System.Drawing.Point(191, 280);
+            this.ButtonReplay.Location = new System.Drawing.Point(191, 207);
             this.ButtonReplay.Name = "ButtonReplay";
-            this.ButtonReplay.Size = new System.Drawing.Size(417, 33);
+            this.ButtonReplay.Size = new System.Drawing.Size(417, 46);
             this.ButtonReplay.TabIndex = 2;
             this.ButtonReplay.Text = "button1";
             this.ButtonReplay.UseVisualStyleBackColor = true;
@@ -68,9 +68,9 @@ namespace ExamenProgrammation
             // 
             // ButtonReplayWrongResults
             // 
-            this.ButtonReplayWrongResults.Location = new System.Drawing.Point(191, 319);
+            this.ButtonReplayWrongResults.Location = new System.Drawing.Point(191, 259);
             this.ButtonReplayWrongResults.Name = "ButtonReplayWrongResults";
-            this.ButtonReplayWrongResults.Size = new System.Drawing.Size(417, 33);
+            this.ButtonReplayWrongResults.Size = new System.Drawing.Size(417, 51);
             this.ButtonReplayWrongResults.TabIndex = 3;
             this.ButtonReplayWrongResults.Text = "button1";
             this.ButtonReplayWrongResults.UseVisualStyleBackColor = true;
@@ -78,9 +78,9 @@ namespace ExamenProgrammation
             // 
             // ButtonRejouerSerieEntiere
             // 
-            this.ButtonRejouerSerieEntiere.Location = new System.Drawing.Point(191, 241);
+            this.ButtonRejouerSerieEntiere.Location = new System.Drawing.Point(191, 154);
             this.ButtonRejouerSerieEntiere.Name = "ButtonRejouerSerieEntiere";
-            this.ButtonRejouerSerieEntiere.Size = new System.Drawing.Size(417, 33);
+            this.ButtonRejouerSerieEntiere.Size = new System.Drawing.Size(417, 47);
             this.ButtonRejouerSerieEntiere.TabIndex = 4;
             this.ButtonRejouerSerieEntiere.Text = "ButtonRejouerSerieEntiere";
             this.ButtonRejouerSerieEntiere.UseVisualStyleBackColor = true;
@@ -88,11 +88,11 @@ namespace ExamenProgrammation
             // 
             // ButtonBack
             // 
-            this.ButtonBack.Location = new System.Drawing.Point(12, 396);
+            this.ButtonBack.Location = new System.Drawing.Point(12, 12);
             this.ButtonBack.Name = "ButtonBack";
             this.ButtonBack.Size = new System.Drawing.Size(136, 42);
             this.ButtonBack.TabIndex = 5;
-            this.ButtonBack.Text = "ButtonBack";
+            this.ButtonBack.Text = "Retour";
             this.ButtonBack.UseVisualStyleBackColor = true;
             this.ButtonBack.Click += new System.EventHandler(this.ButtonBack_Click);
             // 
@@ -100,7 +100,7 @@ namespace ExamenProgrammation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(784, 361);
             this.Controls.Add(this.ButtonBack);
             this.Controls.Add(this.ButtonRejouerSerieEntiere);
             this.Controls.Add(this.ButtonReplayWrongResults);

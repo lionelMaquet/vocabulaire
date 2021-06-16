@@ -36,23 +36,23 @@ namespace ExamenProgrammation
             // 
             // textbox_motFR
             // 
-            this.textbox_motFR.Location = new System.Drawing.Point(91, 102);
+            this.textbox_motFR.Location = new System.Drawing.Point(157, 153);
             this.textbox_motFR.Name = "textbox_motFR";
-            this.textbox_motFR.Size = new System.Drawing.Size(179, 29);
+            this.textbox_motFR.Size = new System.Drawing.Size(375, 29);
             this.textbox_motFR.TabIndex = 0;
             this.textbox_motFR.Text = "Mot FR";
             // 
             // textbox_traduction
             // 
-            this.textbox_traduction.Location = new System.Drawing.Point(295, 102);
+            this.textbox_traduction.Location = new System.Drawing.Point(157, 198);
             this.textbox_traduction.Name = "textbox_traduction";
-            this.textbox_traduction.Size = new System.Drawing.Size(177, 29);
+            this.textbox_traduction.Size = new System.Drawing.Size(375, 29);
             this.textbox_traduction.TabIndex = 1;
             this.textbox_traduction.Text = "Traduction";
             // 
             // button_valider
             // 
-            this.button_valider.Location = new System.Drawing.Point(215, 158);
+            this.button_valider.Location = new System.Drawing.Point(279, 251);
             this.button_valider.Name = "button_valider";
             this.button_valider.Size = new System.Drawing.Size(124, 38);
             this.button_valider.TabIndex = 2;
@@ -64,7 +64,7 @@ namespace ExamenProgrammation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(684, 461);
             this.Controls.Add(this.button_valider);
             this.Controls.Add(this.textbox_traduction);
             this.Controls.Add(this.textbox_motFR);

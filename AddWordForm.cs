@@ -17,6 +17,7 @@ namespace ExamenProgrammation
         public AddWordForm(Serie serie)
         {
             this.serie = serie;
+            this.CenterToScreen();
             InitializeComponent();
         }
 

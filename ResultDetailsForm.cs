@@ -18,6 +18,7 @@ namespace ExamenProgrammation
             this.playlist = playlist;
             InitializeComponent();
             this.Shown += DisplayDetails;
+            this.CenterToScreen();
         }
 
         private void DisplayDetails(object sender, EventArgs e)
@@ -25,6 +26,8 @@ namespace ExamenProgrammation
             int labelWidth = 100;
             int marginLeft = 10;
             Size size = new Size(labelWidth, 30);
+
+           
 
             for (int i = 0; i < playlist.resultats.Count; i++)
             {
@@ -40,7 +43,7 @@ namespace ExamenProgrammation
                     MotATraduire.Text = currentResult.mot.langue_fr;
                 }
                 
-                MotATraduire.Location = new Point(marginLeft * 1 + labelWidth * 0, 40 * i);
+                MotATraduire.Location = new Point(marginLeft * 1 + labelWidth * 0, marginLeft + 40 * i);
                 MotATraduire.Size = size;
 
                 // Label traduction (réponse à donner)
@@ -54,29 +57,41 @@ namespace ExamenProgrammation
                 {
                     traduction.Text = currentResult.mot.traduction;
                 }
-                traduction.Location = new Point(marginLeft * 2 + labelWidth * 1, 40 * i);
+                traduction.Location = new Point(marginLeft * 2 + labelWidth * 1, marginLeft + 40 * i);
                 traduction.Size = size;
 
                 // Label réponse
                 Label reponse = new Label();
                 this.Controls.Add(reponse);
                 reponse.Text = currentResult.reponse;
-                reponse.Location = new Point(marginLeft * 3 + labelWidth * 2, 40 * i);
+                reponse.Location = new Point(marginLeft * 3 + labelWidth * 2, marginLeft + 40 * i);
                 reponse.Size = size;
+                if (currentResult.answeredRight)
+                {
+                    reponse.ForeColor = Color.Green;
+                } else
+                {
+                    reponse.ForeColor = Color.Red;
+                }
 
                 // Label resultat
                 Label resultat = new Label();
                 this.Controls.Add(resultat);
                 if (currentResult.answeredRight)
                 {
+                    resultat.ForeColor = Color.Green;
                     resultat.Text = "Correct";
                 } else
                 {
+                    resultat.ForeColor = Color.Red;
                     resultat.Text = "Incorrect";
                 }
                 
-                resultat.Location = new Point(marginLeft * 4 + labelWidth * 3, 40 * i);
+                resultat.Location = new Point(marginLeft * 4 + labelWidth * 3, marginLeft + 40 * i);
                 resultat.Size = size;
+
+                this.Size = new Size( resultat.Right + marginLeft, resultat.Bottom + marginLeft + 20);
+                
             }
         }
 

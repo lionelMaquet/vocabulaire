@@ -68,6 +68,7 @@
     <Compile Include="AddWordForm.Designer.cs">
       <DependentUpon>AddWordForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Display.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="LanguageButton.cs">
       <SubType>Component</SubType>

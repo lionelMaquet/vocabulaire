@@ -18,13 +18,23 @@ namespace ExamenProgrammation
         {
             this.langue = langue;
             this.parentLanguagesForm = parentLanguagesForm;
+            
             InitializeComponent();
+           
+            
             this.Shown += createSeriesButtons;
+            this.CenterToScreen();
+            
         }
 
         public void createSeriesButtons(object sender, EventArgs e)
         {
+            this.Hide();
             List<Serie> series = DBConnector.getSeries(this.langue);
+
+            ButtonBack.Location = Display.backButtonLocation;
+            ButtonBack.Size = Display.smallButtonSize;
+            ButtonBack.Text = "Retour";
             for (int i = 0; i < series.Count; i++)
             {
                 int buttonWidth = 100;
@@ -35,37 +45,37 @@ namespace ExamenProgrammation
                 Label serieName = new Label();
                 this.Controls.Add(serieName);
                 serieName.Text = series[i].nom_serie;
-                serieName.Location = new Point(marginLeft * 1 + buttonWidth * 0, 40 * i);
-                serieName.Size = size;
+                serieName.Location = new Point(150 , Display.topOffSet + 50 * i + 5);
+                serieName.Size = Display.smallButtonSize;
 
 
                 // Button for listing words 
                 SerieButton listWordsButton = new SerieButton();
                 this.Controls.Add(listWordsButton);
                 listWordsButton.Text = "Lister";
-                listWordsButton.Size = size;
+                listWordsButton.Size = Display.smallButtonSize;
                 listWordsButton.Click += this.listWordsButtonClick;
                 listWordsButton.serie = series[i];
-                listWordsButton.Location = new Point(marginLeft * 2 + buttonWidth * 1, 40 * i);
+                listWordsButton.Location = new Point(150 + (Display.leftButtonMargin + Display.smallButtonSize.Width) * 1, Display.topOffSet + 50 * i);
 
                 // Button for adding a word
                 SerieButton addWordButton = new SerieButton();
                 this.Controls.Add(addWordButton);
                 addWordButton.Text = "Ajouter mot";
-                addWordButton.Size = size;
+                addWordButton.Size = Display.smallButtonSize;
                 addWordButton.Click += this.addWordButtonClick;
                 addWordButton.serie = series[i];
-                addWordButton.Location = new Point(marginLeft * 3 + buttonWidth * 2, 40 * i);
+                addWordButton.Location = new Point(150 + (Display.leftButtonMargin + Display.smallButtonSize.Width) * 2, Display.topOffSet + 50 * i);
 
                 // Button for playing the serie 
                 SerieButton playSerieButtonVersTrad = new SerieButton();
                 this.Controls.Add(playSerieButtonVersTrad);
                 playSerieButtonVersTrad.Text = "Vers trad";
                 playSerieButtonVersTrad.versFr = false;
-                playSerieButtonVersTrad.Size = size;
+                playSerieButtonVersTrad.Size = Display.smallButtonSize;
                 playSerieButtonVersTrad.Click += this.playSerieButton;
                 playSerieButtonVersTrad.serie = series[i];
-                playSerieButtonVersTrad.Location = new Point(marginLeft * 4 + buttonWidth * 3, 40 * i);
+                playSerieButtonVersTrad.Location = new Point(150 + (Display.leftButtonMargin + Display.smallButtonSize.Width) * 3, Display.topOffSet + 50 * i);
 
                 // Button for playing the serie 
                 SerieButton playSerieButtonVersFr = new SerieButton();
@@ -75,8 +85,14 @@ namespace ExamenProgrammation
                 playSerieButtonVersFr.Size = size;
                 playSerieButtonVersFr.Click += this.playSerieButton;
                 playSerieButtonVersFr.serie = series[i];
-                playSerieButtonVersFr.Location = new Point(marginLeft * 5 + buttonWidth * 4, 40 * i);
+                playSerieButtonVersFr.Location = new Point(150 + (Display.leftButtonMargin + Display.smallButtonSize.Width) * 4, Display.topOffSet + 50 * i);
+
+                this.Size = new Size(playSerieButtonVersFr.Right + Display.leftMargin , playSerieButtonVersTrad.Bottom + 100);
             }
+
+            this.CenterToScreen();
+            this.Show();
+
         }
 
         private void playSerieButton(object sender, EventArgs e)

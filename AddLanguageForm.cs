@@ -16,6 +16,7 @@ namespace ExamenProgrammation
         public AddLanguageForm()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
 
         private void ButtonValidate_Click(object sender, EventArgs e)

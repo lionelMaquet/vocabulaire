@@ -17,12 +17,15 @@ namespace ExamenProgrammation
         public LanguagesForm()
         {
             InitializeComponent();
+            
             this.Shown += createLanguagesButtons;
+            this.CenterToScreen();
         }
 
 
         public void createLanguagesButtons(object sender, EventArgs e)
         {
+            
             List<Langue> languages = DBConnector.getLanguages();
 
             for (int i = 0; i < languages.Count; i++)
@@ -30,20 +33,26 @@ namespace ExamenProgrammation
                 LanguageButton newButton = new LanguageButton();
                 this.Controls.Add(newButton);
                 newButton.Text = languages[i].nom_long;
-                newButton.Location = new Point(70, 40 * i);
-                newButton.Size = new Size(100, 30);
+                newButton.Location = new Point(Display.leftMargin, 20 + 40 * i);
+                newButton.Size = Display.smallButtonSize;
                 newButton.Click += this.language_button_click;
                 newButton.langue = languages[i];
-
 
                 AddSerieButton addSerieButton = new AddSerieButton();
                 addSerieButton.langue = languages[i];
                 this.Controls.Add(addSerieButton);
                 addSerieButton.Text = "Ajouter une série";
-                addSerieButton.Location = new Point(200, 40 * i);
-                addSerieButton.Size = new Size(100, 30);
+                addSerieButton.Location = new Point(Display.leftMargin + Display.leftButtonMargin + Display.smallButtonSize.Width,20 + 40 * i);
+                addSerieButton.Size = Display.smallButtonSize;
                 addSerieButton.Click += this.addSerieButtonClick;
+
+                this.Size = new Size(340, languages.Count * (Display.bigButtonSize.Height + 40) + Display.topOffSet);
             }
+
+            ButtonAddLanguage.Size = new Size(220,Display.bigButtonSize.Height) ;
+            ButtonAddLanguage.Location = new Point(50, languages.Count * 40 + Display.topOffSet);
+
+            this.Size = new Size(ButtonAddLanguage.Right + 50, ButtonAddLanguage.Bottom + 50);
         }
 
         private void addSerieButtonClick(object sender, EventArgs e)

@@ -38,7 +38,7 @@ namespace ExamenProgrammation
             // 
             // TextboxNomShort
             // 
-            this.TextboxNomShort.Location = new System.Drawing.Point(327, 85);
+            this.TextboxNomShort.Location = new System.Drawing.Point(238, 85);
             this.TextboxNomShort.Name = "TextboxNomShort";
             this.TextboxNomShort.Size = new System.Drawing.Size(166, 29);
             this.TextboxNomShort.TabIndex = 0;
@@ -46,7 +46,7 @@ namespace ExamenProgrammation
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(217, 85);
+            this.label1.Location = new System.Drawing.Point(112, 88);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 24);
             this.label1.TabIndex = 1;
@@ -55,7 +55,7 @@ namespace ExamenProgrammation
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(234, 157);
+            this.label2.Location = new System.Drawing.Point(112, 152);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 24);
             this.label2.TabIndex = 2;
@@ -63,9 +63,9 @@ namespace ExamenProgrammation
             // 
             // ButtonValidate
             // 
-            this.ButtonValidate.Location = new System.Drawing.Point(327, 225);
+            this.ButtonValidate.Location = new System.Drawing.Point(116, 211);
             this.ButtonValidate.Name = "ButtonValidate";
-            this.ButtonValidate.Size = new System.Drawing.Size(124, 31);
+            this.ButtonValidate.Size = new System.Drawing.Size(288, 47);
             this.ButtonValidate.TabIndex = 4;
             this.ButtonValidate.Text = "Valider";
             this.ButtonValidate.UseVisualStyleBackColor = true;
@@ -73,16 +73,16 @@ namespace ExamenProgrammation
             // 
             // TextboxNomLong
             // 
-            this.TextboxNomLong.Location = new System.Drawing.Point(333, 152);
+            this.TextboxNomLong.Location = new System.Drawing.Point(238, 149);
             this.TextboxNomLong.Name = "TextboxNomLong";
-            this.TextboxNomLong.Size = new System.Drawing.Size(160, 29);
+            this.TextboxNomLong.Size = new System.Drawing.Size(166, 29);
             this.TextboxNomLong.TabIndex = 5;
             // 
             // AddLanguageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(537, 342);
             this.Controls.Add(this.TextboxNomLong);
             this.Controls.Add(this.ButtonValidate);
             this.Controls.Add(this.label2);
