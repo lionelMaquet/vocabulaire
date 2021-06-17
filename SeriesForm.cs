@@ -104,17 +104,6 @@ namespace ExamenProgrammation
             playForm.Show();
             this.Hide();
 
-
-            // What's a good way to create a playlist ? 
-            // 1 : Pass the serie to the form 
-            // 2 : The form transforms it to a playlist, full of a list of results ? 
-            // 2.5 : the form plays ONLY the wrong words (always)
-            // 3 : Each result has the word + true or false, false by default (answered right or wrong) 
-            // 4 : At the end, it shows the results 
-            // 5 : Option 1 : replay all the list => Resets the playlist 
-            // 5 : Option 2 : replay only the right words => restarts the same playlist 
-            // 6 : In either cases, at the end of the playlist, it updates the database with the results
-            // Success
             
         }
 

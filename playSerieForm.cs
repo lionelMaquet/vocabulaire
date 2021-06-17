@@ -131,8 +131,6 @@ namespace ExamenProgrammation
                 playlistEndForm.Show();
                 this.Close();
             }
-            
-
         }
 
         private void ButtonBack_Click(object sender, EventArgs e)
