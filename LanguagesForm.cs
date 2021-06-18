@@ -25,7 +25,6 @@ namespace ExamenProgrammation
 
         public void createLanguagesButtons(object sender, EventArgs e)
         {
-            
             List<Langue> languages = DBConnector.getLanguages();
 
             for (int i = 0; i < languages.Count; i++)
