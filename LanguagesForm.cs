@@ -17,7 +17,6 @@ namespace ExamenProgrammation
         public LanguagesForm()
         {
             InitializeComponent();
-            
             this.Shown += createLanguagesButtons;
             this.CenterToScreen();
         }
