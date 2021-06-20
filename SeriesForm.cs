@@ -18,13 +18,9 @@ namespace ExamenProgrammation
         {
             this.langue = langue;
             this.parentLanguagesForm = parentLanguagesForm;
-            
             InitializeComponent();
-           
-            
             this.Shown += createSeriesButtons;
             this.CenterToScreen();
-            
         }
 
         public void createSeriesButtons(object sender, EventArgs e)
@@ -89,10 +85,8 @@ namespace ExamenProgrammation
 
                 this.Size = new Size(playSerieButtonVersFr.Right + Display.leftMargin , playSerieButtonVersTrad.Bottom + 100);
             }
-
             this.CenterToScreen();
             this.Show();
-
         }
 
         private void playSerieButton(object sender, EventArgs e)
