@@ -44,7 +44,6 @@ namespace ExamenProgrammation
                 serieName.Location = new Point(150 , Display.topOffSet + 50 * i + 5);
                 serieName.Size = Display.smallButtonSize;
 
-
                 // Button for listing words 
                 SerieButton listWordsButton = new SerieButton();
                 this.Controls.Add(listWordsButton);
