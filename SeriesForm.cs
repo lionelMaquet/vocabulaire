@@ -96,8 +96,6 @@ namespace ExamenProgrammation
             playSerieForm playForm = new playSerieForm(playlist, this);
             playForm.Show();
             this.Hide();
-
-            
         }
 
         private void addWordButtonClick(object sender, EventArgs e)
@@ -116,7 +114,6 @@ namespace ExamenProgrammation
 
         public void serie_button_click(object sender, EventArgs e)
         {
-
             MessageBox.Show($"{(sender as SerieButton).serie.num_serie} {(sender as SerieButton).serie.nom_serie} {(sender as SerieButton).serie.langue_traduction} ");
         }
 
