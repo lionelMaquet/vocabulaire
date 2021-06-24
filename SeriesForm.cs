@@ -27,7 +27,6 @@ namespace ExamenProgrammation
         {
             this.Hide();
             List<Serie> series = DBConnector.getSeries(this.langue);
-
             ButtonBack.Location = Display.backButtonLocation;
             ButtonBack.Size = Display.smallButtonSize;
             ButtonBack.Text = "Retour";
